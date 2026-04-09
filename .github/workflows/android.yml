@@ -31,11 +31,8 @@ jobs:
 
     - name: Setup Android Platform
       run: |
-        if [ ! -d "android" ]; then
-          npx cap add android
-        else
-          npx cap sync android
-        fi
+        rm -rf android
+        npx cap add android
 
     - name: Build APK
       working-directory: ./android
